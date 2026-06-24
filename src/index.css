@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-purple: #8B5CF6;
+  --color-pink: #EC4899;
+  --color-dark-100: #050414;
+  
+  /* Animations */
+  --animate-blob: blob 15s infinite ease-in-out;
+}
+
+@layer utilities {
+  /* This creates a subtle gradient that fades from your dark color to a slightly lighter one */
+  .section-gradient-divider {
+    background: linear-gradient(to bottom, #050414 0%, #0a0a1a 100%);
+  }
+
+  /* This adds a subtle glow line at the top of a section to "cut" the view */
+  .section-top-glow {
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+  }
+}
+/* Add this to your index.css file */
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container {
+    width: 320px !important;
+    left: auto !important;
+    right: 10px !important;
+    padding: 0 !important;
+  }
+  
+  .Toastify__toast {
+    margin-bottom: 10px !important;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-dark-100 text-gray-100 selection:bg-purple/30;
+  }
+
+ 
+  h1, h2 {
+    font-family: "Saira", sans-serif;
+    @apply tracking-tight; /* Remove "uppercase" from here */
+  }
+}
+
+@layer utilities {
+  /* Minimalist glassmorphism */
+  .card-glass {
+    @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl rounded-2xl transition-all duration-500 hover:border-purple/50;
+  }
+
+  /* Your custom "hand-drawn" shape */
+  .hand-drawn-border {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-12;
+  }
+
+  /* Typewriter */
+  .typewriter-custom {
+    overflow: hidden;
+    border-right: 0.15em solid var(--color-purple);
+    white-space: nowrap;
+    width: 0;
+    animation: typing-smooth 4s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+  }
+
+  /* Animation Delays */
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-4000 { animation-delay: 4s; }
+}
+
+/* Keyframes */
+@keyframes typing-smooth {
+  0% { width: 0; }
+  50% { width: 22ch; }
+  100% { width: 0; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-purple); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
