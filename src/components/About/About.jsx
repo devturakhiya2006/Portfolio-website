@@ -63,6 +63,7 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Trigger re-build */}
           <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
             {/* Container providing the gradient border and shadow */}
             <div className='relative p-1 rounded-full bg-gradient-to-tr from-indigo-500 to-violet-600 shadow-2xl'>
