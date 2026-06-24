@@ -35,7 +35,7 @@ import csharpLogo from './assets/tech_logo/csharp.png';
 import PHP from './assets/tech_logo/PHP.png';
 
 // Experience Section Logo's
-import WebitoLogo from './assets/Webito_infotech.png';
+import WebitoLogo from './assets/temp_logo.png';
 
 
 // Education Section Logo's
