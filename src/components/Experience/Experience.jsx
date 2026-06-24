@@ -12,12 +12,9 @@ const Experience = () => {
         <p className="text-blue-600 uppercase tracking-[4px] text-sm font-medium">
           Experience
         </p>
-
         <h2 className="text-5xl font-bold text-white mt-3">
-          My Professional{" "}
-          <span className="text-blue-600">Journey</span>
+          My Professional <span className="text-blue-600">Journey</span>
         </h2>
-
         <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
           A timeline of my professional growth, experiences, and
           contributions across different roles and projects.
@@ -26,7 +23,7 @@ const Experience = () => {
 
       {/* Timeline */}
       <div className="relative max-w-7xl mx-auto">
-        {/* Center Line (Deep Blue Gradient) */}
+        {/* Center Line */}
         <div className="absolute left-8 md:left-1/2 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-blue-800 to-transparent md:-translate-x-1/2"></div>
 
         {experiences.map((experience, index) => (
@@ -37,9 +34,7 @@ const Experience = () => {
             }`}
           >
             {/* Timeline Node */}
-            <div
-              className="absolute left-8 md:left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-[#0f0f1a] border-2 border-blue-700 flex items-center justify-center z-20 shadow-[0_0_30px_rgba(30,58,138,0.5)]"
-            >
+            <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-[#0f0f1a] border-2 border-blue-700 flex items-center justify-center z-20 shadow-[0_0_30px_rgba(30,58,138,0.5)]">
               <img
                 src={experience.img}
                 alt={experience.company}
@@ -55,26 +50,30 @@ const Experience = () => {
             />
 
             {/* Card */}
-            <div
-              className={`w-[85%] md:w-[42%] ml-auto md:ml-0 rounded-3xl border border-white/10 bg-[#0a0a1a] backdrop-blur-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:border-blue-700 hover:shadow-[0_0_30px_rgba(30,58,138,0.25)]`}
-            >
-              <div className="flex justify-between items-start gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-white rounded-xl overflow-hidden flex-shrink-0">
-                    <img src={experience.img} alt={experience.company} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white">{experience.role}</h3>
-                    <h4 className="text-blue-500 font-medium">{experience.company}</h4>
-                  </div>
-                </div>
-                <span className="px-3 py-1 rounded-full text-xs bg-blue-900/30 text-blue-300 whitespace-nowrap">
+            <div className="w-[85%] md:w-[42%] ml-auto md:ml-0 rounded-3xl border border-white/10 bg-[#0a0a1a] backdrop-blur-lg p-6 transition-all duration-300 hover:-translate-y-2 hover:border-blue-700 hover:shadow-[0_0_30px_rgba(30,58,138,0.25)]">
+              
+              {/* Fixed Date Layout: Moved outside the header flex to prevent overlap */}
+              <div className="mb-4">
+                <span className="inline-block px-3 py-1 rounded-full text-xs bg-blue-900/30 text-blue-300 border border-blue-800/50">
                   {experience.date}
                 </span>
               </div>
 
+              {/* Header: Logo, Role, Company */}
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-white rounded-xl overflow-hidden flex-shrink-0">
+                  <img src={experience.img} alt={experience.company} className="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white">{experience.role}</h3>
+                  <h4 className="text-blue-500 font-medium">{experience.company}</h4>
+                </div>
+              </div>
+
+              {/* Description */}
               <p className="mt-6 text-gray-300 leading-8">{experience.desc}</p>
 
+              {/* Skills */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {experience.skills.map((skill, i) => (
                   <span
