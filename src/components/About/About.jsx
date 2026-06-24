@@ -3,8 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 // Ensure this path is correct for image_13.png
-import profileImage from "../../assets/profile2.jpeg";
-
+import profileImage from "../../assets/profile2.jpg";
 const About = () => {
   return (
     <section id='about' className='relative py-20 px-[7vw] flex items-center min-h-[90vh] bg-[#050414] overflow-hidden'>
