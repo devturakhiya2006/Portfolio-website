@@ -59,7 +59,7 @@ const Work = () => {
       {/* Modal Container */}
       {selectedProject && (
         <div className='fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 p-4 pt-20 md:pt-4 backdrop-blur-sm'>
-          <div className='bg-[#0a0a1a] border border-white/10 rounded-3xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl relative animate-in fade-in zoom-in duration-300'>
+          <div className='bg-[#0a0a1a] border border-white/10 rounded-3xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl relative animate-in fade-in zoom-in duration-300'>
             
             <button
               onClick={handleCloseModel}
@@ -71,9 +71,9 @@ const Work = () => {
               </svg>
             </button>
             
-            <img src={selectedProject.image} alt={selectedProject.title} className='w-full h-56 md:h-64 object-cover' />
+            <img src={selectedProject.image} alt={selectedProject.title} className='w-full h-56 md:h-64 object-cover min-h-0' />
             
-            <div className='p-6 md:p-8'>
+            <div className='p-6 md:p-8 overflow-y-auto'>
               <h3 className='text-2xl md:text-3xl font-bold text-white mb-4'>{selectedProject.title}</h3>
               
               <div className='text-gray-400 mb-6 leading-relaxed text-sm md:text-base'>
